@@ -14,10 +14,10 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                专业运动器材，全球品质
+                卓步跑步 —— 专业智能跑步机专家
               </h1>
               <p className="mt-4 md:mt-6 text-lg md:text-xl text-muted-foreground">
-                自2005年成立以来，我们致力于为全球客户提供高品质的运动器材。
+                自2020年成立以来，我们致力于为全球客户提供高品质的运动器材。让每一步，都更高效、更健康。
               </p>
               <div className="mt-6 md:mt-8 flex flex-wrap gap-4">
                 <Button asChild size="lg">
@@ -80,7 +80,7 @@ const HomePage = () => {
                   <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">家族价值观</h3>
+              <h3 className="text-xl font-semibold mb-2">企业价值观</h3>
               <p className="text-muted-foreground">
                 我们对待我们的客户像家人一样，每一步都充满关怀和关注。
               </p>
@@ -91,9 +91,9 @@ const HomePage = () => {
                   <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">质量第一</h3>
+              <h3 className="text-xl font-semibold mb-2">品质保障</h3>
               <p className="text-muted-foreground">
-                我们生产的每一件产品都经过严格的质量测试，以确保符合我们的高标准。
+                我们生产的每一件产品都经过严格的质量测试，以确保符合我们和行业的高标准。
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg shadow-sm">
@@ -119,7 +119,7 @@ const HomePage = () => {
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">准备与我们合作？</h2>
               <p className="text-lg opacity-90 mb-8">
-                立即联系我们的团队，讨论我们的产品如何帮助您的业务。
+                请立即联系我们的团队，讨论我们的产品如何帮助您的业务。
               </p>
               <Button asChild size="lg" variant="secondary">
                 <Link to="/contact">立即联系</Link>
