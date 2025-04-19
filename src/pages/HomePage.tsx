@@ -36,8 +36,8 @@ const HomePage = () => {
             </div>
             <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
               <img 
-                src="/img/hero.jpg" 
-                alt="Our products showcase" 
+                src="/lovable-uploads/198c9831-5b1d-4c0c-8d72-0f11fd59ab00.png" 
+                alt="Our products and services" 
                 className="object-cover w-full h-full"
               />
             </div>
