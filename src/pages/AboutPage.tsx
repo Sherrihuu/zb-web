@@ -8,9 +8,9 @@ const AboutPage = () => {
       <section className="bg-secondary/50 py-12 md:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold">About Our Company</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">关于我们</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              A family business dedicated to quality, reliability, and exceptional service since 2005.
+            专注每一步，只为更好的你
             </p>
           </div>
         </div>
@@ -50,10 +50,11 @@ const AboutPage = () => {
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">卓步的使命与愿景</h2>
-            <p className="text-lg mb-12">
-              We're driven by our commitment to excellence and guided by core values that define everything we do.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">我们的使命与愿景</h2>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <li><span className="font-medium text-foreground">普及科学运动</span>:通过精确的数据监测和智能算法，帮助每位用户安全、高效地提升跑步表现。 </li>
+                <li><span className="font-medium text-foreground">解锁无限潜能</span>: 用领先的科技激发运动动力，让跑步不再枯燥，而是成为日常生活中最简单、最愉悦的健康方式。  </li>
+              </ul>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
