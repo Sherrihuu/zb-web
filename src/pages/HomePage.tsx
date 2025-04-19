@@ -14,7 +14,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                卓步跑步 —— 专业智能跑步机专家
+                卓步 —— 智能跑步机专家
               </h1>
               <p className="mt-4 md:mt-6 text-lg md:text-xl text-muted-foreground">
                 自2020年成立以来，我们致力于为全球客户提供高品质的运动器材。让每一步，都更高效、更健康。
@@ -34,7 +34,7 @@ const HomePage = () => {
             </div>
             <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/5da030fc-e5ca-47d1-bddb-83a9e9fbf60d.png" 
+                src="public/img/homepage.png" 
                 alt="浙江卓步运动器材有限公司 产品与服务" 
                 className="object-cover w-full h-full"
               />
