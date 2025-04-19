@@ -1,7 +1,5 @@
 
-import { Link } from "react-router-dom";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export interface Product {
   id: string;
@@ -37,11 +35,6 @@ export function ProductCard({ product, featured = false }: ProductCardProps) {
         <h3 className="font-semibold text-lg">{product.name}</h3>
         <p className="text-muted-foreground text-sm mt-2">{product.description}</p>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
-        <Button asChild variant="outline" className="w-full">
-          <Link to={`/products#${product.id}`}>View Details</Link>
-        </Button>
-      </CardFooter>
     </Card>
   );
 }
