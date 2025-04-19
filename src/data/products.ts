@@ -5,7 +5,7 @@ export const products: Product[] = [
   {
     id: "ZB138",
     name: "普通平板走步机",
-    description: "H轻便简约，适合日常居家走步锻炼，安静耐用，轻松融入生活空间",
+    description: "轻便简约，适合日常居家走步锻炼，安静耐用，轻松融入生活空间",
     image: "/img/跑步机1.png",
     category: "走步机"
   },
