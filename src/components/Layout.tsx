@@ -26,7 +26,7 @@ export function Layout({ children }: LayoutProps) {
         <div className="container flex h-16 items-center">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/5da030fc-e5ca-47d1-bddb-83a9e9fbf60d.png" 
+              src="/img/logo.jpg" 
               alt="浙江卓步运动器材有限公司 Logo" 
               className="w-10 h-10 rounded-md"
             />
