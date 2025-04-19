@@ -168,39 +168,13 @@ const ContactPage = () => {
               </div>
               
               {/* Map (placeholder) */}
-              <div className="mt-8 aspect-[4/3] rounded-lg overflow-hidden">
-  <div
-    id="baidu-map"
-    style={{ width: "100%", height: "100%" }}
-    className="rounded-lg"
-  ></div>
-</div>
-
-<script
-  dangerouslySetInnerHTML={{
-    __html: `
-      var map = new BMap.Map("baidu-map");
-      var myGeo = new BMap.Geocoder();
-      var address = "浙江省金华市婺城区白龙桥镇龙乾南街555号8幢中间2#厂房";
-      myGeo.getPoint(address, function(point) {
-        if (point) {
-          map.centerAndZoom(point, 17);
-          var marker = new BMap.Marker(point);
-          map.addOverlay(marker);
-          marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-          var label = new BMap.Label("浙江卓步运动器材有限公司", {
-            position: point,
-            offset: new BMap.Size(20, -10)
-          });
-          map.addOverlay(label);
-        } else {
-          alert("无法解析该地址");
-        }
-      }, "金华市");
-    `,
-  }}
-/>
-
+              <div className="mt-8 aspect-[4/3] bg-muted rounded-lg overflow-hidden">
+                <img 
+                  src="/img/map.jpg" 
+                  alt="Company location" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             {/* Contact Form */}
