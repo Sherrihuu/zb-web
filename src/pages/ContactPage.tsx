@@ -104,9 +104,9 @@ const ContactPage = () => {
       <section className="bg-secondary/50 py-12 md:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">联系我们</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Have questions or need more information? We're here to help.
+            有疑问或需要更多信息？我们随时为您提供帮助。
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
+              <h2 className="text-3xl font-bold mb-8">开启沟通，携手并进</h2>
               
               <div className="space-y-6">
                 <div className="flex gap-4 items-start">
@@ -126,11 +126,9 @@ const ContactPage = () => {
                     <MapPin size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Our Location</h3>
+                    <h3 className="font-medium">我们的位置</h3>
                     <address className="not-italic text-muted-foreground mt-1">
-                      123 Business Street<br />
-                      City, Province/State<br />
-                      Country, Postal Code
+                    浙江省金华市婺城区白龙桥镇龙乾南街555号8幢中间2#厂房
                     </address>
                   </div>
                 </div>
@@ -140,8 +138,8 @@ const ContactPage = () => {
                     <Phone size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground mt-1">+1 (123) 456-7890</p>
+                    <h3 className="font-medium">联系电话</h3>
+                    <p className="text-muted-foreground mt-1">+（86） 159-7956-4037/p>
                   </div>
                 </div>
                 
@@ -150,8 +148,8 @@ const ContactPage = () => {
                     <Mail size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground mt-1">info@familybusiness.com</p>
+                    <h3 className="font-medium">电子邮箱</h3>
+                    <p className="text-muted-foreground mt-1">339131605@qq.com</p>
                   </div>
                 </div>
                 
@@ -160,11 +158,10 @@ const ContactPage = () => {
                     <Clock size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Business Hours</h3>
+                    <h3 className="font-medium">营业时间</h3>
                     <p className="text-muted-foreground mt-1">
-                      Monday - Friday: 9:00 AM - 5:00 PM<br />
-                      Saturday: 10:00 AM - 2:00 PM<br />
-                      Sunday: Closed
+                      周一- 周日: 北京时间9:00 AM - 6:00 PM<br />
+
                     </p>
                   </div>
                 </div>
@@ -182,7 +179,7 @@ const ContactPage = () => {
             
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-8">Send a Message</h2>
+              <h2 className="text-3xl font-bold mb-8">给我们留言</h2>
               
               {contactSuccess ? (
                 <Alert className="bg-green-50 border-green-200 mb-6">
@@ -205,7 +202,7 @@ const ContactPage = () => {
               <form onSubmit={contactHandleSubmit(onContactSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Your Name</Label>
+                    <Label htmlFor="name">您的姓名</Label>
                     <Input 
                       id="name" 
                       {...contactRegister("name", { required: "Name is required" })}
@@ -217,7 +214,7 @@ const ContactPage = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Your Email</Label>
+                    <Label htmlFor="email">您的邮箱</Label>
                     <Input 
                       id="email" 
                       type="email"
@@ -236,12 +233,12 @@ const ContactPage = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">留言内容</Label>
                     <Textarea 
                       id="message" 
                       rows={5}
                       {...contactRegister("message", { required: "Message is required" })}
-                      placeholder="How can we help you?"
+                      placeholder="我们可以怎么帮助您?"
                     />
                     {contactErrors.message && (
                       <p className="text-sm text-destructive">{contactErrors.message.message}</p>
@@ -263,9 +260,9 @@ const ContactPage = () => {
               
               {/* Newsletter Signup */}
               <div className="mt-12 pt-12 border-t">
-                <h3 className="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <h3 className="text-xl font-bold mb-4">欢迎订阅我们的资讯</h3>
                 <p className="text-muted-foreground mb-6">
-                  Stay updated with our latest products and company news.
+                第一时间了解我们的新品与动态
                 </p>
                 
                 {newsletterSuccess ? (
@@ -296,7 +293,7 @@ const ContactPage = () => {
                           message: "Invalid email address"
                         }
                       })}
-                      placeholder="Your email address"
+                      placeholder="您的邮箱地址"
                       className="w-full"
                     />
                     {newsletterErrors.email && (
