@@ -23,9 +23,9 @@ const ProductsPage = () => {
       <section className="bg-secondary/50 py-12 md:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold">Our Products</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">我们的产品</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Browse our complete catalog of high-quality products designed for your needs
+            浏览我们为您精心打造的高品质产品全目录，满足多样化运动需求
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const ProductsPage = () => {
         <div className="container">
           {/* Category Filter */}
           <div className="mb-8">
-            <h2 className="text-lg font-medium mb-4">Filter by Category</h2>
+            <h2 className="text-lg font-medium mb-4">筛选</h2>
             <div className="flex flex-wrap gap-2">
               <Button
                 variant={selectedCategory === null ? "default" : "outline"}
@@ -83,12 +83,12 @@ const ProductsPage = () => {
       <section className="py-16 bg-secondary/50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Need More Information?</h2>
+            <h2 className="text-3xl font-bold mb-4">想要了解更多信息?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our team is ready to answer any questions about our products and help you find the perfect solution.
+            我们的团队随时准备解答您对产品的任何疑问，帮助您找到最合适的解决方案。
             </p>
             <Button asChild size="lg">
-              <a href="/contact">Contact Our Team</a>
+              <a href="/contact">联系我们</a>
             </Button>
           </div>
         </div>
