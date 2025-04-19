@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Layout } from "@/components/Layout";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -7,8 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { 
-  MapPin, Phone, Mail, Clock, AlertCircle, Check, Loader2 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  AlertCircle,
+  Check,
+  Loader2,
 } from "lucide-react";
 
 interface ContactFormValues {
@@ -25,31 +30,30 @@ const ContactPage = () => {
   const [contactSubmitting, setContactSubmitting] = useState(false);
   const [contactSuccess, setContactSuccess] = useState(false);
   const [contactError, setContactError] = useState(false);
-  
+
   const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
   const [newsletterError, setNewsletterError] = useState(false);
-  
-  const { 
-    register: contactRegister, 
+
+  const {
+    register: contactRegister,
     handleSubmit: contactHandleSubmit,
     formState: { errors: contactErrors },
-    reset: contactReset
+    reset: contactReset,
   } = useForm<ContactFormValues>();
-  
-  const { 
-    register: newsletterRegister, 
+
+  const {
+    register: newsletterRegister,
     handleSubmit: newsletterHandleSubmit,
     formState: { errors: newsletterErrors },
-    reset: newsletterReset
+    reset: newsletterReset,
   } = useForm<NewsletterFormValues>();
 
   const onContactSubmit = async (data: ContactFormValues) => {
     setContactSubmitting(true);
     setContactError(false);
-    
+
     try {
-      // In a real app, you would replace this URL with your actual form endpoint
       const response = await fetch("https://formspree.io/f/xvoeryzb", {
         method: "POST",
         headers: {
@@ -57,7 +61,7 @@ const ContactPage = () => {
         },
         body: JSON.stringify(data),
       });
-      
+
       if (response.ok) {
         setContactSuccess(true);
         contactReset();
@@ -74,9 +78,8 @@ const ContactPage = () => {
   const onNewsletterSubmit = async (data: NewsletterFormValues) => {
     setNewsletterSubmitting(true);
     setNewsletterError(false);
-    
+
     try {
-      // In a real app, you would replace this URL with your actual form endpoint
       const response = await fetch("https://formspree.io/f/xzbwpdvl", {
         method: "POST",
         headers: {
@@ -84,7 +87,7 @@ const ContactPage = () => {
         },
         body: JSON.stringify(data),
       });
-      
+
       if (response.ok) {
         setNewsletterSuccess(true);
         newsletterReset();
@@ -98,6 +101,37 @@ const ContactPage = () => {
     }
   };
 
+  // ✅ Map logic
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!window.BMap || !mapRef.current) return;
+
+    const map = new window.BMap.Map(mapRef.current);
+    const myGeo = new window.BMap.Geocoder();
+    const address = "浙江省金华市婺城区白龙桥镇龙乾南街555号8幢中间2#厂房";
+
+    myGeo.getPoint(
+      address,
+      function (point) {
+        if (point) {
+          map.centerAndZoom(point, 17);
+          const marker = new window.BMap.Marker(point);
+          map.addOverlay(marker);
+          marker.setAnimation(window.BMAP_ANIMATION_BOUNCE);
+          const label = new window.BMap.Label("浙江卓步运动器材有限公司", {
+            position: point,
+            offset: new window.BMap.Size(20, -10),
+          });
+          map.addOverlay(label);
+        } else {
+          alert("无法解析该地址");
+        }
+      },
+      "金华市"
+    );
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -106,7 +140,7 @@ const ContactPage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold">联系我们</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-            有疑问或需要更多信息？我们随时为您提供帮助。
+              有疑问或需要更多信息？我们随时为您提供帮助。
             </p>
           </div>
         </div>
@@ -119,7 +153,7 @@ const ContactPage = () => {
             {/* Contact Information */}
             <div>
               <h2 className="text-3xl font-bold mb-8">开启沟通，携手并进</h2>
-              
+
               <div className="space-y-6">
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -128,31 +162,35 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-medium">我们的位置</h3>
                     <address className="not-italic text-muted-foreground mt-1">
-                    浙江省金华市婺城区白龙桥镇龙乾南街555号8幢中间2#厂房
+                      浙江省金华市婺城区白龙桥镇龙乾南街555号8幢中间2#厂房
                     </address>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Phone size={20} className="text-primary" />
                   </div>
                   <div>
                     <h3 className="font-medium">联系电话</h3>
-                    <p className="text-muted-foreground mt-1">+（86） 159-7956-4037</p>
+                    <p className="text-muted-foreground mt-1">
+                      +（86） 159-7956-4037
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Mail size={20} className="text-primary" />
                   </div>
                   <div>
                     <h3 className="font-medium">电子邮箱</h3>
-                    <p className="text-muted-foreground mt-1">339131605@qq.com</p>
+                    <p className="text-muted-foreground mt-1">
+                      339131605@qq.com
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Clock size={20} className="text-primary" />
@@ -160,92 +198,106 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-medium">营业时间</h3>
                     <p className="text-muted-foreground mt-1">
-                      周一- 周日: 北京时间9:00 AM - 6:00 PM<br />
-
+                      周一 - 周日: 北京时间 9:00 AM - 6:00 PM
                     </p>
                   </div>
                 </div>
               </div>
-              
-              {/* Map (placeholder) */}
+
+              {/* Map */}
               <div className="mt-8 aspect-[4/3] bg-muted rounded-lg overflow-hidden">
-                <img 
-                  src="/img/map.jpg" 
-                  alt="Company location" 
-                  className="w-full h-full object-cover"
+                <div
+                  ref={mapRef}
+                  id="baidu-map"
+                  style={{ width: "100%", height: "100%" }}
+                  className="rounded-lg"
                 />
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-bold mb-8">给我们留言</h2>
-              
-              {contactSuccess ? (
+
+              {contactSuccess && (
                 <Alert className="bg-green-50 border-green-200 mb-6">
                   <Check className="h-4 w-4 text-green-600" />
                   <AlertDescription className="text-green-800">
                     Thank you for your message! We'll get back to you soon.
                   </AlertDescription>
                 </Alert>
-              ) : null}
-              
-              {contactError ? (
+              )}
+
+              {contactError && (
                 <Alert variant="destructive" className="mb-6">
                   <AlertCircle className="h-4 w-4" />
                   <AlertDescription>
                     There was an error sending your message. Please try again.
                   </AlertDescription>
                 </Alert>
-              ) : null}
-              
-              <form onSubmit={contactHandleSubmit(onContactSubmit)} className="space-y-6">
+              )}
+
+              <form
+                onSubmit={contactHandleSubmit(onContactSubmit)}
+                className="space-y-6"
+              >
                 <div className="grid grid-cols-1 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">您的姓名</Label>
-                    <Input 
-                      id="name" 
-                      {...contactRegister("name", { required: "Name is required" })}
+                    <Input
+                      id="name"
+                      {...contactRegister("name", {
+                        required: "Name is required",
+                      })}
                       placeholder="John Doe"
                     />
                     {contactErrors.name && (
-                      <p className="text-sm text-destructive">{contactErrors.name.message}</p>
+                      <p className="text-sm text-destructive">
+                        {contactErrors.name.message}
+                      </p>
                     )}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="email">您的邮箱</Label>
-                    <Input 
-                      id="email" 
+                    <Input
+                      id="email"
                       type="email"
-                      {...contactRegister("email", { 
+                      {...contactRegister("email", {
                         required: "Email is required",
                         pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "Invalid email address"
-                        }
+                          value:
+                            /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "Invalid email address",
+                        },
                       })}
                       placeholder="john.doe@example.com"
                     />
                     {contactErrors.email && (
-                      <p className="text-sm text-destructive">{contactErrors.email.message}</p>
+                      <p className="text-sm text-destructive">
+                        {contactErrors.email.message}
+                      </p>
                     )}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="message">留言内容</Label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
                       rows={5}
-                      {...contactRegister("message", { required: "Message is required" })}
+                      {...contactRegister("message", {
+                        required: "Message is required",
+                      })}
                       placeholder="我们可以怎么帮助您?"
                     />
                     {contactErrors.message && (
-                      <p className="text-sm text-destructive">{contactErrors.message.message}</p>
+                      <p className="text-sm text-destructive">
+                        {contactErrors.message.message}
+                      </p>
                     )}
                   </div>
                 </div>
-                
+
                 <Button type="submit" className="w-full" disabled={contactSubmitting}>
                   {contactSubmitting ? (
                     <>
@@ -257,47 +309,53 @@ const ContactPage = () => {
                   )}
                 </Button>
               </form>
-              
+
               {/* Newsletter Signup */}
               <div className="mt-12 pt-12 border-t">
                 <h3 className="text-xl font-bold mb-4">欢迎订阅我们的资讯</h3>
                 <p className="text-muted-foreground mb-6">
-                第一时间了解我们的新品与动态
+                  第一时间了解我们的新品与动态
                 </p>
-                
-                {newsletterSuccess ? (
+
+                {newsletterSuccess && (
                   <Alert className="bg-green-50 border-green-200 mb-6">
                     <Check className="h-4 w-4 text-green-600" />
                     <AlertDescription className="text-green-800">
                       Thank you for subscribing to our newsletter!
                     </AlertDescription>
                   </Alert>
-                ) : null}
-                
-                {newsletterError ? (
+                )}
+
+                {newsletterError && (
                   <Alert variant="destructive" className="mb-6">
                     <AlertCircle className="h-4 w-4" />
                     <AlertDescription>
                       There was an error subscribing. Please try again.
                     </AlertDescription>
                   </Alert>
-                ) : null}
-                
-                <form onSubmit={newsletterHandleSubmit(onNewsletterSubmit)} className="flex gap-2">
+                )}
+
+                <form
+                  onSubmit={newsletterHandleSubmit(onNewsletterSubmit)}
+                  className="flex gap-2"
+                >
                   <div className="flex-grow">
-                    <Input 
-                      {...newsletterRegister("email", { 
+                    <Input
+                      {...newsletterRegister("email", {
                         required: "Email is required",
                         pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "Invalid email address"
-                        }
+                          value:
+                            /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "Invalid email address",
+                        },
                       })}
                       placeholder="您的邮箱地址"
                       className="w-full"
                     />
                     {newsletterErrors.email && (
-                      <p className="text-sm text-destructive mt-1">{newsletterErrors.email.message}</p>
+                      <p className="text-sm text-destructive mt-1">
+                        {newsletterErrors.email.message}
+                      </p>
                     )}
                   </div>
                   <Button type="submit" disabled={newsletterSubmitting}>
