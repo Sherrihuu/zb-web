@@ -14,29 +14,28 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                Quality Products for Your Business
+                专业运动器材，全球品质
               </h1>
               <p className="mt-4 md:mt-6 text-lg md:text-xl text-muted-foreground">
-                Family-owned and operated since 2005. We provide top-quality products 
-                that meet the needs of businesses worldwide.
+                自2005年成立以来，我们致力于为全球客户提供高品质的运动器材。
               </p>
               <div className="mt-6 md:mt-8 flex flex-wrap gap-4">
                 <Button asChild size="lg">
                   <Link to="/products">
-                    Browse Products
+                    浏览产品
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/contact">
-                    Contact Us
+                    联系我们
                   </Link>
                 </Button>
               </div>
             </div>
             <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/198c9831-5b1d-4c0c-8d72-0f11fd59ab00.png" 
-                alt="Our products and services" 
+                src="/lovable-uploads/5da030fc-e5ca-47d1-bddb-83a9e9fbf60d.png" 
+                alt="浙江卓步运动器材有限公司 产品与服务" 
                 className="object-cover w-full h-full"
               />
             </div>
@@ -49,12 +48,12 @@ const HomePage = () => {
         <div className="container">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">Featured Products</h2>
-              <p className="text-muted-foreground mt-2">Our most popular products that customers love</p>
+              <h2 className="text-3xl font-bold tracking-tight">热门产品</h2>
+              <p className="text-muted-foreground mt-2">我们最受欢迎的产品</p>
             </div>
             <Button asChild variant="ghost" size="sm" className="gap-1">
               <Link to="/products">
-                View All
+                查看全部
                 <ArrowRight size={16} />
               </Link>
             </Button>
@@ -70,9 +69,9 @@ const HomePage = () => {
       {/* Company Values */}
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container">
-          <h2 className="text-3xl font-bold tracking-tight text-center">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-center">为什么选择我们</h2>
           <p className="text-center text-muted-foreground mt-4 mb-12 max-w-2xl mx-auto">
-            We've built our reputation on these core principles that guide everything we do
+            我们的核心价值观指导着我们的每一个决策
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-background p-6 rounded-lg shadow-sm">
@@ -81,9 +80,9 @@ const HomePage = () => {
                   <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Family Values</h3>
+              <h3 className="text-xl font-semibold mb-2">家族价值观</h3>
               <p className="text-muted-foreground">
-                We treat our customers like family, with personal attention and care in every interaction.
+                我们对待我们的客户像家人一样，每一步都充满关怀和关注。
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg shadow-sm">
@@ -92,9 +91,9 @@ const HomePage = () => {
                   <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Quality First</h3>
+              <h3 className="text-xl font-semibold mb-2">质量第一</h3>
               <p className="text-muted-foreground">
-                Every product we offer undergoes rigorous quality testing to ensure it meets our high standards.
+                我们生产的每一件产品都经过严格的质量测试，以确保符合我们的高标准。
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg shadow-sm">
@@ -104,9 +103,9 @@ const HomePage = () => {
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Reliable Service</h3>
+              <h3 className="text-xl font-semibold mb-2">可靠服务</h3>
               <p className="text-muted-foreground">
-                On-time delivery and responsive customer support you can count on whenever you need us.
+                我们提供准时交付和响应迅速的客户服务，您可以在任何时候依赖我们。
               </p>
             </div>
           </div>
@@ -118,12 +117,12 @@ const HomePage = () => {
         <div className="container">
           <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-12">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Work with Us?</h2>
+              <h2 className="text-3xl font-bold mb-4">准备与我们合作？</h2>
               <p className="text-lg opacity-90 mb-8">
-                Contact our team today to discuss how our products can help your business.
+                立即联系我们的团队，讨论我们的产品如何帮助您的业务。
               </p>
               <Button asChild size="lg" variant="secondary">
-                <Link to="/contact">Contact Us Now</Link>
+                <Link to="/contact">立即联系</Link>
               </Button>
             </div>
           </div>
