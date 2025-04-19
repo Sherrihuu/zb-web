@@ -20,7 +20,7 @@ export const products: Product[] = [
     id: "ZB-T40A",
     name: "ZB-T40A电动升降走步机",
     description: "配备电动升降系统，可灵活调节角度，满足多样锻炼需求，兼具科技感与舒适性",
-    image: "/img/跑步机3.png",
+    image: "/img/跑步机3.jpg",
     category: "走步机"
   }
 ];
