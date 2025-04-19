@@ -63,7 +63,7 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="text-lg font-semibold mb-4">浙江卓步运动器材有限公司</h3>
               <p className="text-muted-foreground mb-4">
-                专业运动器材，服务全球客户。成立于2005年。
+                专业运动器材，服务全球客户。成立于2020年。
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-muted-foreground hover:text-primary">
@@ -100,15 +100,15 @@ export function Layout({ children }: LayoutProps) {
               <address className="not-italic">
                 <div className="flex items-center gap-2 text-muted-foreground mb-2">
                   <MapPin size={16} />
-                  <span>浙江省 杭州市</span>
+                  <span>浙江省 金华市</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground mb-2">
                   <Phone size={16} />
-                  <span>+86 (123) 456-7890</span>
+                  <span>（+86）159-7956-4037</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Mail size={16} />
-                  <span>info@zhuobu-sports.com</span>
+                  <span>339131605@qq.com</span>
                 </div>
               </address>
             </div>

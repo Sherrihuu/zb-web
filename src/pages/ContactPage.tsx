@@ -139,7 +139,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">联系电话</h3>
-                    <p className="text-muted-foreground mt-1">+（86） 159-7956-4037/p>
+                    <p className="text-muted-foreground mt-1">（+86） 159-7956-4037/p>
                   </div>
                 </div>
                 
