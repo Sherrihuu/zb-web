@@ -13,7 +13,7 @@ export const products: Product[] = [
     id: "ZB138A",
     name: "ZB138A跑步机",
     description: "经典家用跑步机，稳定高效，满足家庭健身的核心需求",
-    image: "/img/跑步机2.png",
+    image: "/img/跑步机2.jpg",
     category: "跑步机"
   },
   {
