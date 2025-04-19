@@ -24,20 +24,14 @@ const AboutPage = () => {
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2005 by the Chen family, our company began as a small workshop 
-                  producing specialized components for local businesses. With dedication to 
-                  quality and customer service, we quickly grew to become a trusted name in the industry.
+                卓步运动成立于2020年，位于浙江金华，是一家专注于高端智能跑步机研发、生产与销售的创新型体育科技公司。我们集工程设计、人体工学、
+                数据分析与物联网技术于一身，致力于为家庭场景提供安全、耐用、智能化的跑步解决方案。
+                自创立以来，极迈跑步已服务超过10,000+家庭用户和200+专业健身房合作伙伴，帮助千万跑友实现科学运动、健康生活。
                 </p>
                 <p>
-                  Through the years, we expanded our product lines while maintaining our 
-                  commitment to excellent craftsmanship and personal customer relationships. 
-                  Today, we serve clients across the country and internationally, but still 
-                  operate with the same family values that guided us from day one.
-                </p>
-                <p>
-                  Our team now includes second-generation family members working alongside 
-                  industry experts, combining traditional knowledge with modern innovation 
-                  to deliver products that meet the evolving needs of our customers.
+                未来，极迈跑步将继续深化“科技+健康+社交”生态，通过云端大数据与社群运营，构建跑友交流平台，举办线上线下马拉松、
+                虚拟团跑等活动，帮助用户在家也能享受专业训练与社群互动的双重体验。我们坚信：以科技驱动健身，以品质成就健康，
+                让每一台极迈跑步机成为用户通往美好生活的“动”力伙伴。  
                 </p>
               </div>
             </div>
@@ -56,7 +50,7 @@ const AboutPage = () => {
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Our Mission & Values</h2>
+            <h2 className="text-3xl font-bold mb-6">卓步的使命与愿景</h2>
             <p className="text-lg mb-12">
               We're driven by our commitment to excellence and guided by core values that define everything we do.
             </p>
@@ -64,73 +58,23 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-background p-8 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
+              <h3 className="text-xl font-semibold mb-4">我们的使命</h3>
               <p className="text-muted-foreground">
-                To provide high-quality products that help our customers succeed, 
-                while maintaining the personal touch and reliability that comes from 
-                being a family-owned business.
+              我们以对卓越的承诺为动力，并以定义我们一切行动的核心价值观为指引
               </p>
             </div>
             <div className="bg-background p-8 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Core Values</h3>
+              <h3 className="text-xl font-semibold mb-4">我们的愿景</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li><span className="font-medium text-foreground">Quality</span>: Excellence in every product</li>
-                <li><span className="font-medium text-foreground">Integrity</span>: Honest business practices</li>
-                <li><span className="font-medium text-foreground">Service</span>: Putting customers first</li>
-                <li><span className="font-medium text-foreground">Innovation</span>: Constant improvement</li>
-                <li><span className="font-medium text-foreground">Family</span>: Working together with respect</li>
+                <li><span className="font-medium text-foreground">成为全球跑步机行业的标杆</span>:引领智能健身设备创新</li>
+                <li><span className="font-medium text-foreground">构建“跑步＋社交＋健康”生态</span>: 让每一次开机，都能连接志同道合的跑者，分享进步与快乐</li>
+                <li><span className="font-medium text-foreground">推动全民健康</span>: 让科技赋能更多人享受运动带来的身心平衡与长久活力。  </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Leadership Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="text-center">
-              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                <img 
-                  src="/img/team-1.jpg" 
-                  alt="Chen Wei, Founder & CEO" 
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <h3 className="text-xl font-semibold">Chen Wei</h3>
-              <p className="text-muted-foreground">Founder & CEO</p>
-            </div>
-            
-            {/* Team Member 2 */}
-            <div className="text-center">
-              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                <img 
-                  src="/img/team-2.jpg" 
-                  alt="Lin Mei, Operations Director" 
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <h3 className="text-xl font-semibold">Lin Mei</h3>
-              <p className="text-muted-foreground">Operations Director</p>
-            </div>
-            
-            {/* Team Member 3 */}
-            <div className="text-center">
-              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                <img 
-                  src="/img/team-3.jpg" 
-                  alt="Chen Jian, Product Development" 
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <h3 className="text-xl font-semibold">Chen Jian</h3>
-              <p className="text-muted-foreground">Product Development</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
