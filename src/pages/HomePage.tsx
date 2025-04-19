@@ -34,7 +34,7 @@ const HomePage = () => {
             </div>
             <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
               <img 
-                src="/img/homepage.png" 
+                src="/img/homepage.jpg" 
                 alt="浙江卓步运动器材有限公司 产品与服务" 
                 className="object-cover w-full h-full"
               />
