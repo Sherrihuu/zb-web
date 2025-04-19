@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Layout } from "@/components/Layout";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -98,6 +97,32 @@ const ContactPage = () => {
     }
   };
 
+  const mapRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  if (!window.BMap || !mapRef.current) return;
+
+  const map = new window.BMap.Map(mapRef.current);
+  const myGeo = new window.BMap.Geocoder();
+  const address = "浙江省金华市婺城区白龙桥镇龙乾南街555号8幢中间2#厂房";
+
+  myGeo.getPoint(address, function (point) {
+    if (point) {
+      map.centerAndZoom(point, 17);
+      const marker = new window.BMap.Marker(point);
+      map.addOverlay(marker);
+      marker.setAnimation(window.BMAP_ANIMATION_BOUNCE);
+      const label = new window.BMap.Label("浙江卓步运动器材有限公司", {
+        position: point,
+        offset: new window.BMap.Size(20, -10),
+      });
+      map.addOverlay(label);
+    } else {
+      alert("无法解析该地址");
+    }
+  }, "金华市");
+}, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -167,14 +192,14 @@ const ContactPage = () => {
                 </div>
               </div>
               
-              {/* Map (placeholder) */}
-              <div className="mt-8 aspect-[4/3] bg-muted rounded-lg overflow-hidden">
-                <img 
-                  src="/img/map.jpg" 
-                  alt="Company location" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {/* 替换原来的静态地图 */}
+            <div className="mt-8 aspect-[4/3] bg-muted rounded-lg overflow-hidden">
+              <div
+                ref={mapRef}
+                id="baidu-map"
+                style={{ width: "100%", height: "100%" }}
+                className="rounded-lg"
+              />
             </div>
             
             {/* Contact Form */}
