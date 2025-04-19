@@ -51,18 +51,18 @@ const AboutPage = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">我们的使命与愿景</h2>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li><span className="font-medium text-foreground">普及科学运动</span>:通过精确的数据监测和智能算法，帮助每位用户安全、高效地提升跑步表现。 </li>
-                <li><span className="font-medium text-foreground">解锁无限潜能</span>: 用领先的科技激发运动动力，让跑步不再枯燥，而是成为日常生活中最简单、最愉悦的健康方式。  </li>
-              </ul>
+            <p className="text-lg mb-12">
+              我们以对卓越的承诺为动力，并以定义我们一切行动的核心价值观为指引。
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-background p-8 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">我们的使命</h3>
-              <p className="text-muted-foreground">
-              我们以对卓越的承诺为动力，并以定义我们一切行动的核心价值观为指引
-              </p>
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <li><span className="font-medium text-foreground">普及科学运动</span>:通过精确的数据监测和智能算法，帮助每位用户安全、高效地提升跑步表现。 </li>
+                <li><span className="font-medium text-foreground">解锁无限潜能</span>: 用领先的科技激发运动动力，让跑步不再枯燥，而是成为日常生活中最简单、最愉悦的健康方式。  </li>
+              </ul>
             </div>
             <div className="bg-background p-8 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">我们的愿景</h3>
